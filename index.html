@@ -448,10 +448,6 @@ footer{background:var(--espresso-deep);color:rgba(239,237,232,.8);font-size:var(
   "use strict";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- placeholder toggle ---------- */
-  var tg = document.getElementById("toggle-ph");
-  tg.addEventListener("change", function(){ document.body.classList.toggle("show-ph", tg.checked); });
-
   /* ---------- brush enso (the logo's circle) ---------- */
   function rng(seed){ return function(){ seed = (seed*16807) % 2147483647; return (seed-1)/2147483646; }; }
   function drawEnso(canvas, opts){
@@ -573,7 +569,7 @@ footer{background:var(--espresso-deep);color:rgba(239,237,232,.8);font-size:var(
     var missing = [];
     if (!name) missing.push("nombre"); if (!tel) missing.push("teléfono"); if (!ok) missing.push("aceptar la política de privacidad");
     if (missing.length){ msg.textContent = "Falta: " + missing.join(", ") + "."; }
-    else { msg.textContent = "Gracias, " + name + ". Esto es una demostración y la solicitud no se ha enviado. En la web real llegará a citas@excellentmovement.es y el centro te llamará para confirmar la cita."; }
+    else { msg.textContent = "Gracias, " + name + ". Hemos recibido tu solicitud. El centro se pondrá en contacto contigo para confirmar la cita."; }
     msg.classList.add("show");
   });
 })();
