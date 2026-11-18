@@ -411,7 +411,7 @@ footer{background:var(--espresso-deep);color:rgba(239,237,232,.8);font-size:var(
             </div>
           </div>
           <div class="field full"><label class="lbl" for="f-msg">Cuéntanos brevemente</label><textarea id="f-msg" name="message" placeholder="Desde cuándo te duele, cómo empezó…"></textarea></div>
-          <label class="consent full" for="f-ok" style="grid-column:1/-1"><input type="checkbox" id="f-ok" required> He leído la política de privacidad y acepto que me contacten para gestionar la cita.</label>
+          <label class="consent full" for="f-ok" style="grid-column:1/-1"><input type="checkbox" id="f-ok" required> He leído la <button type="button" onclick="document.getElementById('privacy-modal').showModal()" style="background:none;border:none;padding:0;color:var(--sand);text-decoration:underline;cursor:pointer;font:inherit">política de privacidad</button> y acepto que me contacten para gestionar la cita.</label>
           <div style="grid-column:1/-1"><button class="btn btn-solid" type="submit" id="f-send">Enviar solicitud</button></div>
           <p class="form-msg" id="form-msg" role="status"></p>
         </form>
@@ -463,6 +463,35 @@ footer{background:var(--espresso-deep);color:rgba(239,237,232,.8);font-size:var(
     </div>
   </div>
 </footer>
+
+<!-- Modal política de privacidad -->
+<dialog id="privacy-modal" style="max-width:640px;width:90%;border:none;border-radius:16px;padding:40px;background:var(--bone);color:var(--espresso-deep);box-shadow:0 8px 40px rgba(0,0,0,.3)">
+  <form method="dialog" style="display:flex;justify-content:flex-end;margin-bottom:16px">
+    <button style="background:none;border:none;cursor:pointer;font-size:1.5rem;line-height:1;color:var(--espresso-deep)" aria-label="Cerrar">✕</button>
+  </form>
+  <h2 style="font-family:var(--display);font-size:1.4rem;text-transform:uppercase;margin:0 0 20px">Política de privacidad</h2>
+  <div style="font-size:.9rem;line-height:1.7;overflow-y:auto;max-height:60vh">
+    <p><strong>Responsable del tratamiento</strong><br>
+    Fernando López Barranco · Excellent Movement Fisioterapia<br>
+    Av. de la Loma de Úbeda, Bajo 5, 23400 Úbeda (Jaén)<br>
+    <a href="mailto:info@excellentmovementclinic.com" style="color:var(--espresso)">info@excellentmovementclinic.com</a></p>
+
+    <p><strong>Finalidad</strong><br>
+    Los datos recogidos en el formulario de contacto (nombre, teléfono y correo electrónico) se utilizan exclusivamente para gestionar la solicitud de cita y ponernos en contacto contigo. No se utilizan para ninguna otra finalidad ni se ceden a terceros.</p>
+
+    <p><strong>Base legal</strong><br>
+    El tratamiento se basa en tu consentimiento expreso, prestado al marcar la casilla de aceptación del formulario (art. 6.1.a RGPD).</p>
+
+    <p><strong>Conservación de los datos</strong><br>
+    Los datos se conservarán durante el tiempo necesario para gestionar tu solicitud y, en su caso, la relación asistencial, o hasta que solicites su supresión.</p>
+
+    <p><strong>Tus derechos</strong><br>
+    Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición escribiendo a <a href="mailto:info@excellentmovementclinic.com" style="color:var(--espresso)">info@excellentmovementclinic.com</a>. Si consideras que el tratamiento no se ajusta a la normativa, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener" style="color:var(--espresso)">aepd.es</a>).</p>
+
+    <p><strong>Seguridad</strong><br>
+    Excellent Movement aplica las medidas técnicas y organizativas necesarias para garantizar la seguridad de tus datos y evitar su alteración, pérdida o acceso no autorizado.</p>
+  </div>
+</dialog>
 
 <script>
 (function(){
