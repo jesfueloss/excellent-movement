@@ -551,8 +551,6 @@ footer{background:var(--espresso-deep);color:rgba(239,237,232,.8);font-size:var(
   }
   drawEnso(document.getElementById("enso"), {color:"#efede8", animate:true, seed:11});
   document.querySelectorAll(".mini-enso").forEach(function(c){ drawEnso(c, {color:"#c7a273", animate:false, seed:5, width:0.06}); });
-  var footLogo = document.querySelector("footer img");
-  if (footLogo) document.getElementById("enso-logo").src = footLogo.src;
 
   /* ---------- body map ---------- */
   var zones = [
