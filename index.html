@@ -622,7 +622,11 @@ footer{background:var(--espresso-deep);color:rgba(239,237,232,.8);font-size:var(
     var tel  = document.getElementById("f-tel").value.trim();
     var ok   = document.getElementById("f-ok").checked;
     var missing = [];
-    if (!name) missing.push("nombre"); if (!tel) missing.push("teléfono"); if (!ok) missing.push("aceptar la política de privacidad");
+    if (!name) missing.push("nombre");
+    if (!tel) missing.push("teléfono");
+    else if (!/^[6789]\d{8}$/.test(tel.replace(/\s/g,""))) missing.push("teléfono válido (9 dígitos)");
+    if (mail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) missing.push("correo electrónico válido");
+    if (!ok) missing.push("aceptar la política de privacidad");
     if (missing.length){ msg.style.color=""; msg.textContent = "Falta: " + missing.join(", ") + "."; msg.classList.add("show"); return; }
 
     var originalText = submitBtn.textContent;
